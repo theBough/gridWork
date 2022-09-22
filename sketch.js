@@ -1,5 +1,5 @@
 var startBtn
-var b;
+var b= [];
 function setup() {
   createCanvas(400, 400);
   startBtn = createButton("Click to Start")
@@ -9,8 +9,14 @@ function setup() {
 }//end setup
 function draw() {
   background(220);
-  b.display();
+  for(i = 0 ; i<b.length ; i++){
+    b[i].display();
+  }//end loop
+  
 }//end draw
 function makeGrid(){
-  b=new Boxes(50,50,100,100,25,225,31)
+  for(i=0; i<5;i++){
+    b.push(new Boxes(i*31+50,50,30,30,25,225,31))
+  }//end loop
+  
 }//end makeGrid
