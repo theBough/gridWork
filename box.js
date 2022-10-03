@@ -13,4 +13,14 @@ function Boxes(x,y,w,h,r,g,b){
     rect(this.x, this.y, this.w, this.h);
     pop()
   }
+  this.mouseOver = function(){
+    if(mouseY > this.y &&
+       mouseY < this.y + this.h &&
+       mouseX > this.x &&
+       mouseX< this.x + this.w
+      ){
+      //This mouse should be in a box
+      this.c = color(0,0,0)
+    }//end if
+  }//end mouseOver
 }
