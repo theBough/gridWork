@@ -20,7 +20,9 @@ function Boxes(x,y,w,h,r,g,b){
        mouseX< this.x + this.w
       ){
       //This mouse should be in a box
-      this.c = color(0,0,0)
+      this.r = 0;
+      this.g = 0;
+      this.b = 0
     }//end if
   }//end mouseOver
 }
