@@ -1,5 +1,6 @@
 
 var b = [];
+var gameOn = false;
 function setup() {
   createCanvas(500, 500);
   makeGrid();
@@ -45,8 +46,6 @@ function makeGrid() {
   } //end i loop
 } //end makeGrid
 function loadColours(){
-  //the first value is the column
-  //the second value is the row
   b[3][0].r = 255
   b[3][0].g = 0
   b[3][0].b = 0
@@ -54,7 +53,45 @@ function loadColours(){
   b[1][3].r = 255
   b[1][3].g = 0
   b[1][3].b = 0
-}//end loadColours
+  
+  b[4][0].r = 255
+  b[4][0].g = 127
+  b[4][0].b = 0
+  
+  b[2][3].r = 255
+  b[2][3].g = 127
+  b[2][3].b = 0
+  
+  b[2][4].r = 0
+  b[2][4].g = 255
+  b[2][4].b = 55
+  
+  
+  b[4][3].r = 0
+  b[4][3].g = 255
+  b[4][3].b = 55
+  
+  b[1][4].r = 0
+  b[1][4].g = 179
+  b[1][4].b = 255
+  
+   
+  b[0][0].r = 0
+  b[0][0].g = 179
+  b[0][0].b = 255
+  
+  b[2][2].r = 255
+  b[2][2].g = 221
+  b[2][2].b = 0
+  
+  b[3][1].r = 255
+  b[3][1].g = 221
+  b[3][1].b = 0
+}
+function mousePressed(){
+  console.log(mouseX)
+  console.log(mouseY)
+}//end mousePressed
 
 
 
