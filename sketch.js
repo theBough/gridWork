@@ -1,6 +1,9 @@
 
 var b = [];
 var gameOn = false;
+var activeR;
+var activeG;
+var activeB;
 function setup() {
   createCanvas(500, 500);
   makeGrid();
@@ -12,7 +15,10 @@ function draw() {
   for (i = 0; i < b.length; i++) {
     for (j = 0; j < b[i].length; j++) {
       b[i][j].display();
-      b[i][j].mouseOver();
+      if(gameOn){
+        b[i][j].mouseOver();
+      }
+      
     
     } //endj loop
   } //end i loop
@@ -89,9 +95,18 @@ function loadColours(){
   b[3][1].b = 0
 }
 function mousePressed(){
-  console.log(mouseX)
-  console.log(mouseY)
+  gameOn = true;
+  for (i = 0; i < b.length; i++) {
+    for (j = 0; j < b[i].length; j++) {
+      b[i][j].getColor();
+    } //endj loop
+  } //end i loop
+  
 }//end mousePressed
+function mouseReleased(){
+  gameOn = false;
+  console.log("Boughen")
+}
 
 
 
