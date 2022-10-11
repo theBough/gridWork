@@ -13,7 +13,8 @@ function Boxes(x, y, w, h, r, g, b) {
     rect(this.x, this.y, this.w, this.h);
     pop();
   };
-  this.mouseOver = function () {
+  
+  this.getColor = function () {
     if (gameOn) {
       if (
         mouseY > this.y &&
@@ -22,9 +23,26 @@ function Boxes(x, y, w, h, r, g, b) {
         mouseX < this.x + this.w
       ) {
         //This mouse should be in a box
-        this.r = 0;
-        this.g = 0;
-        this.b = 0;
+        activeR = this.r;
+        activeG = this.g;
+        activeB = this.b;
+        
+      } //end if
+    } //end GameOn
+  }; //end getColor
+  this.mouseOver = function () {
+    if (gameOn) {
+      if (
+        mouseY > this.y &&
+        mouseY < this.y + this.h &&
+        mouseX > this.x &&
+        mouseX < this.x + this.w
+      ) {
+        this.r = activeR
+        this.g = activeG
+        this.b = activeB
+        
+        
       } //end if
     } //end GameOn
   }; //end mouseOver
